@@ -688,7 +688,6 @@ for dataCombination in args_dict["DATASET_CONFIGURATION"]:
             # CREATE DATA GENERATORS
             # -------------------------
 
-            # Setup generators for augmentation
             train_gen = utilities.create_data_gen(
                 Xtrain,
                 Ytrain,

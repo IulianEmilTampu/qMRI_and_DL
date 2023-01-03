@@ -49,13 +49,13 @@ if not su_debug_flag:
     )
     parser.add_argument(
         "-df",
-        "--DATASET_FOLDER",
+        "--IMG_DATASET_FOLDER",
         required=True,
         help="Provide the Image Dataset Folder where the folders for each modality are located.",
     )
     parser.add_argument(
         "-af",
-        "--ANNOTATION_FOLDER",
+        "--ANNOTATION_DATASET_FOLDER",
         required=True,
         help="Provide the Annotation  Folder where annotations are located.",
     )
@@ -98,10 +98,10 @@ else:
     args_dict = {}
     args_dict["WORKING_FOLDER"] = "/flush/iulta54/Research/P4-qMRI"
     args_dict[
-        "DATASET_FOLDER"
+        "IMG_DATASET_FOLDER"
     ] = "/flush/iulta54/Research/Data/qMRI_data/qMRI_per_modality"
     args_dict[
-        "ANNOTATION_FOLDER"
+        "ANNOTATION_DATASET_FOLDER"
     ] = "/flush/iulta54/Research/Data/qMRI_data/qMRI_per_modality/All_Annotations"
     args_dict[
         "TRAIN_VALIDATION_TEST_FILE"
@@ -239,7 +239,7 @@ with open(args_dict["TRAIN_VALIDATION_TEST_FILE"]) as file:
 
 # build filename based on the model input specifications
 test_gt_files = [
-    os.path.join(args_dict["ANNOTATION_FOLDER"], f) for f in config["test"]
+    os.path.join(args_dict["ANNOTATION_DATASET_FOLDER"], f) for f in config["test"]
 ]
 # load annotation data
 test_gt = []
@@ -279,7 +279,7 @@ modalities = combination_dict[input_configuratio_idx][1]
 check_modalities = [
     m
     for m in modalities
-    if os.path.isdir(os.path.join(args_dict["DATASET_FOLDER"], m)) == False
+    if os.path.isdir(os.path.join(args_dict["IMG_DATASET_FOLDER"], m)) == False
 ]
 if check_modalities:
     print(
@@ -293,7 +293,7 @@ else:
         file_dict[ds][subject_number] = {}
         for m in modalities:
             file_dict[ds][subject_number][m] = os.path.join(
-                args_dict["DATASET_FOLDER"],
+                args_dict["IMG_DATASET_FOLDER"],
                 m,
                 "_".join(m.split("_")[1::]) + "_" + s.split("_")[-1],
             )
@@ -588,6 +588,7 @@ for f in range(args_dict["NFOLDS"]):
                 save_name=fig_name,
             )
 print("Done!")
+
 # %% WORK ON THE ENSAMBLED PREDICTION (MAJORITY VOUTING)
 print("Saving ensemble images...")
 save_figure = True
