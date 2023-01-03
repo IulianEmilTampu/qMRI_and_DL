@@ -225,7 +225,6 @@ import warnings
 
 tf.get_logger().setLevel(logging.ERROR)
 from tensorflow.keras.utils import to_categorical
-from tensorflow_addons.optimizers import Lookahead
 
 devices = tf.config.list_physical_devices("GPU")
 
@@ -682,7 +681,7 @@ for dataCombination in args_dict["DATASET_CONFIGURATION"]:
             #
             # x = Xtest
             # y = Ytest
-            # utilities.inspectDataset_v2(Xtrain, Ytrain, end_slice=100)
+            # utilities.inspectDataset(Xtrain, Ytrain, end_slice=100)
             # # end check files
 
             # --------------------------
@@ -690,13 +689,13 @@ for dataCombination in args_dict["DATASET_CONFIGURATION"]:
             # -------------------------
 
             # Setup generators for augmentation
-            train_gen = utilities.apply_augmentation(
+            train_gen = utilities.create_data_gen(
                 Xtrain,
                 Ytrain,
                 batch_size=args_dict["BATCH_SIZE"],
                 seed=args_dict["RANDOM_SEED_NUMBER"],
             )
-            val_gen = utilities.apply_augmentation(
+            val_gen = utilities.create_data_gen(
                 Xvalid,
                 Yvalid,
                 batch_size=args_dict["BATCH_SIZE"],

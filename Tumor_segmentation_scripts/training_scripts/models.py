@@ -381,7 +381,7 @@ class unet(object):
 
             # plot some information
             if epoch % 50 == 0:
-                utilities.plotModelPerformance_v2(
+                utilities.plotModelPerformance(
                     self.train_loss_history,
                     self.train_accuracy_history,
                     self.val_loss_history,
@@ -459,7 +459,7 @@ class unet(object):
                     with open(os.path.join(save_model_path, "history.json"), "w") as fp:
                         json.dump(json_dict, fp)
                     # save training curves
-                    utilities.plotModelPerformance_v2(
+                    utilities.plotModelPerformance(
                         self.train_loss_history,
                         self.train_accuracy_history,
                         self.val_loss_history,
@@ -497,7 +497,7 @@ class unet(object):
                 with open(os.path.join(save_model_path, "history.json"), "w") as fp:
                     json.dump(json_dict, fp)
                 # save training curves
-                utilities.plotModelPerformance_v2(
+                utilities.plotModelPerformance(
                     self.train_loss_history,
                     self.train_accuracy_history,
                     self.val_loss_history,
