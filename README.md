@@ -41,7 +41,7 @@ The code is organized in three folders:
 
 ## Usage
 ### Dataset preprocessing
-- **Registration to T1w-GD and skull stripping**: use the ``register_volumes_parallel_processing.sh`` script to register all the MR sequences available for each subject to the T1w-Gd volume. This script uses the FLIRT utility in the FSL library. After registration, a brain mask is obtained from the T1w-Gd volume and applied to all other registered MR sequences. Brain masking is performed using the BET utility in the FSL library. 
+**Registration to T1w-GD and skull stripping**: use the ``register_volumes_parallel_processing.sh`` script to register all the MR sequences available for each subject to the T1w-Gd volume. This script uses the FLIRT utility in the FSL library. After registration, a brain mask is obtained from the T1w-Gd volume and applied to all other registered MR sequences. Brain masking is performed using the BET utility in the FSL library. 
 
 ### Tumor detection
 To configure and run tumor detection model training use the ``training_routine.py`` script available in the Tumor_detection/training_scripts folder. The script receives several in-line inputs such as the IMG_DATASET_FOLDER specifying the location of the dataset for training and DATASET_CONFIGURATION specifying the combination of MR sequences to use for training. For the full list of available settings run:
