@@ -16,7 +16,7 @@ In conclusion, models trained with qMRI data achieved comparable detection and s
 **Key highlights:**
 - **Tumor detection and segmentation** performance were similar across models using conventional and quantitative MR data post-contrast. 
 - **Across the cohort**, relevant regions for tumor detection did not show similarities in the relaxation rate trends within and outside the tumor annotation.
-- **Single-subject analysis** reveals that there are cases where relevant regions inside and outside the annotation have similar relaxation trends.
+- **Single-subject analysis** reveals cases where relevant regions inside and outside the annotation have similar relaxation trends.
 
 
 ## Table of Contents
@@ -41,27 +41,27 @@ The code is organized in three folders:
 - **Registration to T1w-GD and skull stripping**: use the ``register_volumes_parallel_processing.sh`` script to register all the MR sequences available for each subject to the T1w-Gd volume. This script uses the FLIRT utility in the FSL library. After registration, a brain mask is obtained from the T1w-Gd volume and applied to all other registered MR sequences. Brain masking is performed using the BET utility in the FSL library. 
 
 ### Tumor detection
-To configure and run tumor detection model training use the ``training_routine.py`` script available in the Tumor_detection/training_scripts folder. The script recieves several in-line inputs such as the IMG_DATASET_FOLDER specifying the location of the dataset for training and DATASET_CONFIGURATION specifying the combination of MR sequences to use for training. For the full list of available settings run:
+To configure and run tumor detection model training use the ``training_routine.py`` script available in the Tumor_detection/training_scripts folder. The script receives several in-line inputs such as the IMG_DATASET_FOLDER specifying the location of the dataset for training and DATASET_CONFIGURATION specifying the combination of MR sequences to use for training. For the full list of available settings run:
 ```bash
 python3 Tumor_detection_scripts/training_scripts/training_routine.py --help
 ```
-For an example of how to train the detection model through a repeated cross validation scheme, see the ``bash_utility_run_model_training_for_ten_times_repeated_cross_validation.sh`` script.
+For an example of how to train the detection model through a repeated cross-validation scheme, see the ``bash_utility_run_model_training_for_ten_times_repeated_cross_validation.sh`` script.
 
-After model training, model performance as tabular .csv data can be obtained using the ``gather_tabular_data.py`` script available at Tumor_detection/plotting_scripts folder. The script can gather the test results from several trained model configurations (i.e. MR sequence combinations). 
+After model training, model performance as tabular .csv data can be obtained using the ``gather_tabular_data.py`` script available in the Tumor_detection/plotting_scripts folder. The script can gather the test results from several trained model configurations (i.e. MR sequence combinations). 
 The resulting tabular information can then be used to plot graphs for several metrics using the ``plot_boxplot_comparison_from_summary_file.py`` or ``plot_ROC_comparison_from_summary_file.py`` scripts. 
 Additionally, scripts for obtaining occlusion and Grad-CAM attribution maps can be obtained using the ``plot_model_occlusionMaps.py`` and ``plot_model_GradCAM.py`` scripts. 
-For a detaied description of how to run the different scripts, see the comments within each script.
+For a detailed description of how to run the different scripts, see the comments within each script.
 
 ### Tumor segmentation
-To configure and run tumor detection model training use the ``training_routine.py`` script available in the Tumor_segmentation_scripts/training_scripts folder. The script recieves several in-line inputs such as the IMG_DATASET_FOLDER specifying the location of the dataset for training and DATASET_CONFIGURATION specifying the combination of MR sequences to use for training. For the full list of available settings run:
+To configure and run tumor detection model training use the ``training_routine.py`` script available in the Tumor_segmentation_scripts/training_scripts folder. The script receives several in-line inputs such as the IMG_DATASET_FOLDER specifying the dataset's location for training and DATASET_CONFIGURATION specifying the combination of MR sequences to use for training. For the full list of available settings run:
 ```bash
 python3 Tumor_segmentation_scripts/training_scripts/training_routine.py --help
 ```
-For an example of how to train the detection model through a repeated cross validation scheme, see the ``run_five_times_repeated_cross_validation.sh`` script.
+For an example of how to train the detection model through a repeated cross-validation scheme, see the ``run_five_times_repeated_cross_validation.sh`` script.
 
 After training, models can be tested using the ``test_model.py`` script. Then, using the ``gather_tabular_data.py`` scipt, the testig results from several model configurations (i.e. MR sequence input combinations) can be aggregated in a tabular .csv file. 
-By running the ``plot_boxplot_comparison_from_summary_file.py`` script on the tabular file, plots of the different evaluation metrics can be obtained.
-For a detaied description of how to run the different scripts, see the comments within each script.
+Run the ``plot_boxplot_comparison_from_summary_file.py`` script on the tabular file to plot the comparison between the different MR sequence configurations.
+For a detailed description of how to run the different scripts, see the comments within each script.
 
 ## Reference
 If you use this work, please cite:
