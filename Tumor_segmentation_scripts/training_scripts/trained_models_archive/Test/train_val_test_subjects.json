@@ -1,1 +1,0 @@
-{"test": ["Annotation_13.nii.gz"], "train": [["Annotation_12.nii.gz", "Annotation_1.nii.gz"], ["Annotation_10.nii.gz", "Annotation_11.nii.gz"]], "validation": [["Annotation_10.nii.gz", "Annotation_11.nii.gz"], ["Annotation_12.nii.gz", "Annotation_1.nii.gz"]]}
