@@ -30,6 +30,9 @@ In conclusion, models trained with qMRI data achieved comparable detection and s
 ## Setup
 TODO. Add also FSL setup.
 
+## Datasets
+The clinical data used in this study cannot be made publicly available given (1) that it contains sensitive personal information and (2) the legal restrictions related to ethical approval. Nevertheless, one can experiment with the model training, evaluation, and explainability analysis using datasets such as [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html).
+
 ## Code structure
 The code is organized in three folders:
 - **Data_preprocessing_scripts**: contains the scripts needed for dataset preprocessing and organization for deep learning model training.
@@ -81,4 +84,5 @@ title = {Deep learning-based detection and identification of brain tumor biomark
 journal = {Machine Learning: Science and Technology},}
 ```
 
----
+## License
+This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
