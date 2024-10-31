@@ -1,7 +1,7 @@
 
 # Deep Learning-based Detection and Identification of Brain Tumor Biomarkers in Quantitative MR-Images
 
-This repository contains code and data to support the study of deep learning techniques for detecting and segmenting brain tumor biomarkers using quantitative MR images (qMRI). The project investigates whether qMRI provides additional information compared to conventional MRI (cMRI) when detecting and segmenting brain tumors.
+This repository contains code to support the study of deep learning techniques for detecting and segmenting brain tumor biomarkers using quantitative MR images (qMRI). The project investigates whether qMRI provides additional information compared to conventional MRI (cMRI) when detecting and segmenting brain tumors.
 
 [Journal Article](https://dx.doi.org/10.1088/2632-2153/acf095) | [Cite](#reference)
 
