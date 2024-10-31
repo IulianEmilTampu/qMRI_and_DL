@@ -5,6 +5,10 @@ This repository contains code to support the study of deep learning techniques f
 
 [Journal Article](https://dx.doi.org/10.1088/2632-2153/acf095) | [Cite](#reference)
 
+**Key highlights:**
+- **Tumor detection and segmentation** performance were similar across models using conventional and quantitative MR data post-contrast. 
+- **Across the cohort**, relevant regions for tumor detection did not show similarities in the relaxation rate trends within and outside the tumor annotation.
+- **Single-subject analysis** reveals cases where relevant regions inside and outside the annotation have similar relaxation trends.
 
 **Abstract**
 
@@ -12,12 +16,6 @@ The infiltrative nature of malignant gliomas leads to active tumor spread into t
 For this purpose, both preoperative conventional (T1-weighted pre- and post-contrast, T2-weighted, and FLAIR) and quantitative (pre- and post-contrast R1, R2, and proton density) MR images were collected from 23 patients showing radiological features consistent with high-grade glioma. The dataset includes 528 transversal slices used to train 2D deep learning models for tumor detection and segmentation with either cMRI or qMRI. Additionally, trends in the quantitative R1 and R2 rates of regions deemed important for tumor detection by model explainability methods were analyzed qualitatively.
 Results show that models trained using a combination of pre- and post-contrast qMRI data achieved the highest performance metrics in tumor detection (MCC = 0.72) and segmentation (DSC = 0.90), though the difference compared to cMRI-based models was not statistically significant. Analysis of regions identified by model explainability techniques did not reveal notable differences between cMRI and qMRI-trained models. However, for individual cases, relaxation rates in areas outside of the annotated tumor regions exhibited similar post-contrast changes as those within the annotation, suggesting the presence of infiltrative tumor beyond cMRI-visible boundaries.
 In conclusion, models trained with qMRI data achieved comparable detection and segmentation performance to those trained with cMRI, with the added advantage of quantitatively assessing brain tissue properties within similar scan times. For individual patients, the relaxation rate analysis in model-identified areas indicates potential infiltrative tumor regions beyond the cMRI-based annotations.
-
-**Key highlights:**
-- **Tumor detection and segmentation** performance were similar across models using conventional and quantitative MR data post-contrast. 
-- **Across the cohort**, relevant regions for tumor detection did not show similarities in the relaxation rate trends within and outside the tumor annotation.
-- **Single-subject analysis** reveals cases where relevant regions inside and outside the annotation have similar relaxation trends.
-
 
 ## Table of Contents
 - [Setup](#Setup)
